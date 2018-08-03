@@ -6,8 +6,15 @@ describe('Trip', function () {
   let trip;
 
   beforeEach(function () {
-    trip1 = new Trip(`Pedal Africa`, `Southern Africa`, `Bike ride from Mozambique to Namibia`, `26/06/2012`, `05/08/2012`);
-    trip2 = new Trip(`Home`, `Hinckley`, `Home for Christmas`, `25/12/2017`);
+    const detail1 = {
+      name: `Pedal Africa`,
+      location:`Southern Africa`,
+      description: `Bike ride from Mozambique to Namibia`,
+      startDate: `26/06/2012`,
+      endDate: `05/08/2012`
+    };
+
+    trip1 = new Trip(detail1);
   });
 
   it(`should have a name`, () => {
@@ -20,10 +27,6 @@ describe('Trip', function () {
 
   it(`should have an end date`, () => {
     assert.strictEqual(trip1.endDate, `05/08/2012`)
-  });
-
-  it(`should have an end date equal to the start if not specified`, () => {
-    assert.strictEqual(trip2.endDate, trip2.startDate);
   });
 
   it(`should have a location`, () => {

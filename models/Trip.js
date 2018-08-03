@@ -1,10 +1,10 @@
 class Trip {
-  constructor(name, location, description, startDate, endDate = startDate) {
-    this.name = name;
-    this.startDate = startDate;
-    this.endDate = endDate;
-    this.location = location;
-    this.description = description;
+  constructor(details) {
+    this.name = details.name;
+    this.startDate = details.startDate;
+    this.endDate = details.endDate;
+    this.location = details.location;
+    this.description = details.description;
   };
 
 };
