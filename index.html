@@ -11,12 +11,19 @@
     <form class="trip-detail-form">
 
       <label for="name-input">Name: </label>
-      <input type="text" id="name-input" placeholder="Trip name">
+      <input type="text" id="name-input" placeholder="Trip name" required>
 
-      <label for="date-input">Date: </label>
-      <input type="date" id="date-input">
+      <label for="start-date-input">From: </label>
+      <input type="date" id="start-date-input" required>
 
-      
+      <label for="end-date-input">Until (optional): </label>
+      <input type="date" id="end-date-input">
+
+      <label for="location-input">Location: </label>
+      <input type="text" id="location-input" required>
+
+      <label for="description-input">Description: </label>
+      <input type="text" id="description-input" required>
 
       <input type="submit" value="Save">
 
