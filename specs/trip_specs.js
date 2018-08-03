@@ -13,4 +13,16 @@ describe('Trip', function () {
     assert.strictEqual(trip.name, `Pedal Africa`);
   });
 
+  it(`should have a date`, () => {
+    assert.strictEqual(trip.date, `26/06/2012`);
+  });
+
+  it(`should have a location`, () => {
+    assert.strictEqual(trip.location, `Southern Africa`);
+  });
+
+  it(`should have a description`, () => {
+    assert.strictEqual(trip.description, `Bike ride from Mozambique to Namibia`)
+  });
+
 });
