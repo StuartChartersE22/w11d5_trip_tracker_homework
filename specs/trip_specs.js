@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Trip = require(`../models/Trip.js`)
+const Trip = require(`../models/trip.js`);
 
 describe('Trip', function () {
 

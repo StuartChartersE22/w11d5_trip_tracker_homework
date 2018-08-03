@@ -4,30 +4,45 @@
     <meta charset="utf-8">
     <title>Trip Tracker</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="models/trip.js" charset="utf-8"></script>
     <script src="js/trip_tracker.js"></script>
   </head>
   <body>
 
-    <form class="trip-detail-form">
+    <label for="trip-detail-form"><h2>New Trip: </h2></label>
+    <form id="trip-detail-form">
 
       <label for="name-input">Name: </label>
-      <input type="text" id="name-input" placeholder="Trip name" required>
+      <input type="text" id="name-input" name="name" placeholder="Trip name" required>
 
       <label for="start-date-input">From: </label>
-      <input type="date" id="start-date-input" required>
+      <input type="date" id="start-date-input"  name="startDate" required>
 
-      <label for="end-date-input">Until (optional): </label>
-      <input type="date" id="end-date-input">
+      <label for="end-date-input">Until: </label>
+      <input type="date" id="end-date-input" name="endDate">
 
       <label for="location-input">Location: </label>
-      <input type="text" id="location-input" required>
+      <input type="text" id="location-input" name="location" required>
 
       <label for="description-input">Description: </label>
-      <input type="text" id="description-input" required>
+      <input type="text" id="description-input" name="description" required>
 
       <input type="submit" value="Save">
 
     </form>
+
+    <div id="trip-list">
+      <h2>Trips: </h2>
+      <table id="trip-details">
+        <tr>
+          <th><h3>Name</h3></th>
+          <th><h3>From</h3></th>
+          <th><h3>Until</h3></th>
+          <th><h3>Location</h3></th>
+          <th><h3>Description</h3></th>
+        </tr>
+      </table>
+    </div>
 
   </body>
 </html>
