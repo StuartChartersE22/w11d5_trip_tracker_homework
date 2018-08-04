@@ -7,11 +7,11 @@ describe('Trip', function () {
 
   beforeEach(function () {
     const detail1 = {
-      name: `Pedal Africa`,
-      location:`Southern Africa`,
-      description: `Bike ride from Mozambique to Namibia`,
-      startDate: `26/06/2012`,
-      endDate: `05/08/2012`
+      name: {value: `Pedal Africa`},
+      location: {value: `Southern Africa`},
+      description: {value: `Bike ride from Mozambique to Namibia`},
+      startDate: {value: `26/06/2012`},
+      endDate: {value: `05/08/2012`}
     };
 
     trip1 = new Trip(detail1);

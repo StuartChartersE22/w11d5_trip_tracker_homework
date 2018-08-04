@@ -9,4 +9,6 @@ class Trip {
 
 };
 
-// module.exports = Trip;
+try {
+  module.exports = Trip;
+} catch (e) {}
