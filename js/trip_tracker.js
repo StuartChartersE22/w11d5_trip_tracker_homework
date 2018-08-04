@@ -16,10 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tripList = document.querySelector(`#trip-details`);
     const tripDetails = document.createElement(`tr`)
 
-    for(let detail in Object.keys(trip)){
-      console.dir(detail);
+    for(let detail of Object.keys(trip)){
       const tripDetail = document.createElement(`td`);
-      tripDetail.textContent = event.target[detail].value;
+      tripDetail.textContent = trip[detail];
       tripDetails.appendChild(tripDetail);
     };
     tripList.appendChild(tripDetails);
