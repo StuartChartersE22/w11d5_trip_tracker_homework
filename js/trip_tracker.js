@@ -5,11 +5,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const detailForm = document.getElementById("trip-detail-form");
 
+  const oneDay = document.getElementById("one-day");
+  const multiDay = document.getElementById("multi-day");
+  const dateOptions = document.querySelector('.dateEntry');
+  const endDate = document.createElement(`div`);
+
+  const endDateOption = document.createElement(`input`);
+  endDateOption.id = `end-date-input`;
+  endDateOption.type = `date`;
+  endDateOption.name = `endDate`;
+  endDateOption.required = true;
+  const endDateLabel = document.createElement(`label`);
+  endDateLabel.htmlFor = `end-date-input`;
+  endDateLabel.textContent = `Until: `
+
+  endDate.appendChild(endDateLabel);
+  endDate.appendChild(endDateOption);
+
+  const removeEndDate = function () {
+    if(dateOptions.contains(endDate)){
+      dateOptions.removeChild(endDate);
+    }
+  }
+
+  const addEndDate = function () {
+    if(!dateOptions.contains(endDate)){
+      dateOptions.appendChild(endDate);
+    }
+  }
+
+  oneDay.addEventListener(`click`, (event) => {
+    removeEndDate();
+  });
+
+  multiDay.addEventListener(`click`, (event) => {
+    addEndDate();
+  });
+
+  // <label for="end-date-input">Until: </label>
+  // <input type="date" id="end-date-input" name="endDate">
+
   detailForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if(!event.target.endDate.value){
-      event.target.endDate.value = event.target.startDate.value;
+    if(!event.target.contains(endDate)){
+      event.target.endDate = {value: event.target.startDate.value};
     };
 
     const trip = new Trip(event.target);
@@ -35,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tripList.appendChild(tripDetails);
+
+    removeEndDate();
     detailForm.reset();
   });
 
