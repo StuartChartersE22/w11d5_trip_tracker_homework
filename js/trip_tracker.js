@@ -79,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     deleteAllButton.hidden = false;
 
     removeEndDate();
-    console.dir(tripList);
-
     detailForm.reset();
   });
 
