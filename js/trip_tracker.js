@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript loaded');
 
   const detailForm = document.getElementById("trip-detail-form");
-
+  const deleteAllButton = document.getElementById(`delete-all-button`);
   const oneDay = document.getElementById("one-day");
   const multiDay = document.getElementById("multi-day");
+  const tripList = document.querySelector(`#trip-details`);
+
   const dateOptions = document.querySelector('.dateEntry');
   const endDate = document.createElement(`div`);
 
@@ -53,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const trip = new Trip(event.target);
-    const tripList = document.querySelector(`#trip-details`);
     const tripDetails = document.createElement(`tr`)
     tripDetails.classList.add(`trip-details`);
 
@@ -75,11 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tripList.appendChild(tripDetails);
+    deleteAllButton.hidden = false;
 
     removeEndDate();
+    console.dir(tripList);
+
     detailForm.reset();
   });
 
-
+  deleteAllButton.addEventListener('click', () => {
+    const tripListDetails = document.getElementsByClassName('trip-details');
+    for(let tripListDetail of tripListDetails) {
+      tripList.removeChild(tripListDetail);
+    }
+    deleteAllButton.hidden = true;
+  });
 
 });
